@@ -12,6 +12,10 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  width: 166px;
+  margin: 10px;
+  padding: 3px;
 }
 
 .operation input {
@@ -21,13 +25,18 @@ p {
   height: 20px;
   color: white;
 }
+.operation p {
+  margin-left: 10px;
+}
 .total {
   background-color: #c4c4c4;
   padding: 25px;
+  width: 200px;
 }
 .total div {
   background-color: white;
   display: flex;
+  justify-content: space-between;
 }
 .total div p {
   margin: 10px;
