@@ -2,16 +2,11 @@ import React, { useState, useRef } from 'react';
 import '../style.css';
 export default function Total({ total, action }) {
   return (
-    <div
-      style={{
-        backgroundColor: '#c4c4c4',
-        padding: '25px'
-      }}
-    >
-      <div style={{ backgroundColor: 'white', display: 'flex' }}>
-        <p style={{ margin: '10px' }}>Total {total}</p>
+    <div className="total">
+      <div>
+        <p>Total {total}</p>
 
-        <p
+        <p id="action"
           style={{
             backgroundColor: 'white',
             backgroundColor: '#c4c4c4',

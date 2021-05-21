@@ -1,3 +1,37 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.operation {
+  background-color: #c4c4c4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.operation input {
+  background-color: black;
+  width: 40px;
+  margin-left: 10px;
+  height: 20px;
+  color: white;
+}
+.total {
+  background-color: #c4c4c4;
+  padding: 25px;
+}
+.total div {
+  background-color: white;
+  display: flex;
+}
+.total div p {
+  margin: 10px;
+}
+#action {
+  background-color: #c4c4c4;
 }

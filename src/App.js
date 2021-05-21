@@ -23,10 +23,31 @@ export default function App() {
     setAction(`Minus ${totalRef.current.value}`);
     totalRef.current.value = 0;
   };
+  const Multiplication = () => {
+    const inputValue = totalRef.current.value;
+    setTotal(previous => {
+      return (previous *= parseInt(inputValue));
+    });
+    setAction(`Multiply ${totalRef.current.value}`);
+    totalRef.current.value = 0;
+  };
+  const Division = () => {
+    try {
+      if (totalRef.current.value == 0) {
+        throw new Error('Zero is not an allowed divider');
+      }
+      const inputValue = totalRef.current.value;
+      setTotal(previous => {
+        return previous / parseInt(inputValue);
+      });
+      setAction(`Divide ${totalRef.current.value}`);
+      totalRef.current.value = 0;
+    } catch (e) {
+      alert(e);
+    }
+  };
   return (
-    <div
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-    >
+    <div className="container">
       <Total total={total} action={action} />
       <br />
       <Operation
@@ -36,6 +57,14 @@ export default function App() {
       <Operation
         totalRef={totalRef}
         operation={{ operation: Subtract, name: 'Subtract' }}
+      />
+      <Operation
+        totalRef={totalRef}
+        operation={{ operation: Multiplication, name: 'Multiplication' }}
+      />
+      <Operation
+        totalRef={totalRef}
+        operation={{ operation: Division, name: 'Division' }}
       />
     </div>
   );
