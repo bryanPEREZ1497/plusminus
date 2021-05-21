@@ -5,7 +5,7 @@ import './style.css';
 
 export default function App() {
   const [total, setTotal] = useState(0);
-  const [action, setAction] = useState('');
+  const [message, setMessage] = useState('');
   const sumRef = useRef();
   const subtractionRef = useRef();
   const multiplicationRef = useRef();
@@ -15,7 +15,7 @@ export default function App() {
     setTotal(previous => {
       return (previous += parseInt(inputValue));
     });
-    setAction(`Plus ${sumRef.current.value}`);
+    setMessage(`Plus ${sumRef.current.value}`);
     sumRef.current.value = 0;
   };
   const Subtract = () => {
@@ -23,7 +23,7 @@ export default function App() {
     setTotal(previous => {
       return (previous -= parseInt(inputValue));
     });
-    setAction(`Minus ${subtractionRef.current.value}`);
+    setMessage(`Minus ${subtractionRef.current.value}`);
     subtractionRef.current.value = 0;
   };
   const Multiplication = () => {
@@ -31,7 +31,7 @@ export default function App() {
     setTotal(previous => {
       return (previous *= parseInt(inputValue));
     });
-    setAction(`Multiply ${multiplicationRef.current.value}`);
+    setMessage(`Multiply ${multiplicationRef.current.value}`);
     multiplicationRef.current.value = 0;
   };
   const Division = () => {
@@ -43,7 +43,7 @@ export default function App() {
       setTotal(previous => {
         return previous / parseInt(inputValue);
       });
-      setAction(`Divide ${divisionRef.current.value}`);
+      setMessage(`Divide ${divisionRef.current.value}`);
       divisionRef.current.value = 0;
     } catch (e) {
       alert(e);
@@ -51,7 +51,7 @@ export default function App() {
   };
   return (
     <div className="container">
-      <Total total={total} action={action} />
+      <Total total={total} message={message} />
       <br />
       <Operation
         totalRef={sumRef}

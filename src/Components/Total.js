@@ -1,19 +1,20 @@
 import React, { useState, useRef } from 'react';
 import '../style.css';
-export default function Total({ total, action }) {
+export default function Total({ total, message }) {
   return (
     <div className="total">
       <div>
         <p>Total {total}</p>
 
-        <p id="action"
+        <p
+          id="message"
           style={{
             backgroundColor: 'white',
             backgroundColor: '#c4c4c4',
             margin: '10px'
           }}
         >
-          {action}
+          {message}
         </p>
       </div>
     </div>
